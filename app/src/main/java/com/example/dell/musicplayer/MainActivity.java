@@ -1,6 +1,9 @@
 package com.example.dell.musicplayer;
 
 import android.content.pm.PackageManager;
+import android.media.MediaMetadataRetriever;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,21 +22,18 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     String[] title;
     ArrayList<File> mySongs = null;
+    long[] tt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
-        {
-            if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE))
-            {
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        if (ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            } else {
 
-            }
-            else {
-
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
             }
         }
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         mySongs = findSongs(Environment.getExternalStorageDirectory());
         title = new String[mySongs.size()];
+        tt = new long[mySongs.size()];
         for (int i = 0; i < mySongs.size(); i++) {
-
             title[i] = mySongs.get(i).getName().toString().replace(".mp3", "").replace(".wav", "").replace("-StarMusiQ.Com", "").replace("- TamilTunes.com", "").replace("[Starmusqic.cc]", "").replace("- VmusiQ.Com", "").replace("-VmusiQ.Com", "");
         }
         recyclerView.setAdapter(new MyAdapter(title, this, mySongs));
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             if (singleFile.isDirectory() && !singleFile.isHidden()) {
                 a1.addAll(findSongs(singleFile));
             } else {
-                if (singleFile.getName().endsWith(".mp3") || (singleFile.getName().endsWith(".MP3"))||(singleFile.getName().endsWith(".wav"))) {
+                if (singleFile.getName().endsWith(".mp3") || (singleFile.getName().endsWith(".MP3")) || (singleFile.getName().endsWith(".wav"))) {
                     a1.add(singleFile);
                 }
             }
@@ -67,4 +67,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return a1;
     }
+
 }

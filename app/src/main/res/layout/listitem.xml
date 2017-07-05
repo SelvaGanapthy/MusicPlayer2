@@ -6,43 +6,51 @@
     android:elevation="5dp"
     android:orientation="vertical"
     android:paddingBottom="1dp">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="match_parent">
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:padding="10dp">
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="68dp"
-            android:layout_height="80dp"
-            android:layout_gravity="end"
-            android:textStyle="italic"
-            android:textSize="18dp"
-            android:textColor="#ffffff"
-            android:background="#92ce4d" />
-        <ImageView
-            android:layout_marginLeft="2dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/img1"
-            android:src="@drawable/songimg"
-            />
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="serif"
-            android:textColor="#000000"
-            android:text="sdfdfddsfdfsd"
-            android:textSize="17dp"
-            android:textStyle="italic" />
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="10dp">
+
+
+
+            <Button
+                android:id="@+id/b1"
+                android:layout_width="68dp"
+                android:layout_height="80dp"
+                android:layout_gravity="end"
+                android:background="#92ce4d"
+                android:gravity="center"
+                android:text=">"
+                android:textColor="#ffffff"
+                android:textSize="38dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:src="@drawable/songimg" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70dp"
+                android:fontFamily="serif"
+                android:text="sdfdfddsfdfsd"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="italic" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
 </LinearLayout>
