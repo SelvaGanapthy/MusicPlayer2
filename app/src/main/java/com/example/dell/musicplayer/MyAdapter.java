@@ -45,9 +45,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((Item) holder).t1.setText(title[position]);
 
-
-
-
     }
 
     @Override
@@ -70,7 +67,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             this.title = title;
             t1 = (TextView) itemView.findViewById(R.id.text1);
             b1 = (Button) itemView.findViewById(R.id.b1);
-
 
         }
 
