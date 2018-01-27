@@ -100,4 +100,13 @@ public class MainActivity extends AppCompatActivity {
         return a1;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onStateNotSaved() {
+        super.onStateNotSaved();
+    }
 }
