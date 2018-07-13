@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_notification"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        android:src="@drawable/defaultmusicimg" />
+
+
+    <TextView
+        android:id="@+id/songTitle_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/actionLayout"
+        android:layout_toRightOf="@+id/imageView_notification"
+        android:layout_weight="51.19"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxLines="3"
+        android:padding="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="hahaha..."
+        android:textColor="#ffff00"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/totalTimes_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/songTitle_notification"
+        android:layout_toRightOf="@+id/imageView_notification"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:text="12:09"
+        android:textColor="#ffff00" />
+
+    <LinearLayout
+        android:id="@+id/actionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+        android:orientation="horizontal"
+        android:paddingRight="20dp">
+
+        <ImageButton
+            android:id="@+id/btnPrevious_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_skip_previous_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/btnPlay_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:src="@drawable/ic_pause_circle_filled_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/btnNext_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:src="@drawable/ic_skip_next_white_24dp" />
+    </LinearLayout>
+</RelativeLayout>
